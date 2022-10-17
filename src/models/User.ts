@@ -18,12 +18,12 @@ const userSchema = new mongoose.Schema({
   lastUpdatedOn: { type: Date, required: true, default: Date.now },
 });
 
-userSchema.post("save", async (user, next) => {
-  if (!user.isNew) {
+userSchema.pre("save", async function (next) {
+  if (!this.isNew) {
     return next();
   }
 
-  await Stats.create({ user: user._id });
+  await Stats.create({ user: this._id });
   next();
 });
 
