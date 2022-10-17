@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-export interface FriendRequest {
+export interface FriendRequestType {
   requestId: string;
   sender: Types.ObjectId;
   recepient: Types.ObjectId;

@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { RoomType } from "../types/room";
 import Message from "./Message";
 
 const roomSchema = new mongoose.Schema({
@@ -23,4 +24,4 @@ roomSchema.pre("findOneAndDelete", async function (next) {
   next();
 });
 
-export default mongoose.model("Room", roomSchema);
+export default mongoose.model<RoomType>("Room", roomSchema);

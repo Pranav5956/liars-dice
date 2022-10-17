@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { MessageType } from "../types/message";
 
 const messageReactionSchema = new mongoose.Schema(
   {
@@ -18,4 +19,4 @@ const messageSchema = new mongoose.Schema({
   editedOn: { type: Date, required: true, default: Date.now },
 });
 
-export default mongoose.model("Message", messageSchema);
+export default mongoose.model<MessageType>("Message", messageSchema);

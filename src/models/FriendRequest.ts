@@ -1,5 +1,5 @@
 import mongoose, { Types } from "mongoose";
-import { FriendRequest } from "../types/friendRequest";
+import { FriendRequestType } from "../types/friendRequest";
 
 const friendRequestSchema = new mongoose.Schema({
   requestId: { type: String, required: true, unique: true, index: true },
@@ -9,7 +9,7 @@ const friendRequestSchema = new mongoose.Schema({
   message: { type: String },
 });
 
-export default mongoose.model<FriendRequest>(
+export default mongoose.model<FriendRequestType>(
   "FriendRequest",
   friendRequestSchema
 );

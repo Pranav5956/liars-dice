@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { StatsType } from "../types/stats";
 
 const statsSchema = new mongoose.Schema({
   user: { type: Types.ObjectId, required: true, ref: "User" },
@@ -9,4 +10,4 @@ const statsSchema = new mongoose.Schema({
   onlineTime: { type: Number, required: true, default: 0 },
 });
 
-export default mongoose.model("Stats", statsSchema);
+export default mongoose.model<StatsType>("Stats", statsSchema);
